@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio - Justin Salazar J.</ion-title>
+
+
+    
+  </ion-toolbar>
+</ion-header>
+
+<!---
+  
+  
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container">
+    <h2>Mi primera App en Ionic</h2>
+    <h2>Justin Salazar Jimenez</h2>
+    <h2>5-0432-0198</h2>
+    <ion-button routerLink="/alert" >Ir a Alerta</ion-button>
+    <ion-button color="secondary" routerLink="/action-sheet" >Ir a action-sheet</ion-button>
+  </div>
+
+  
+
+</ion-content>
+  
+  
+  ---->
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+     
+    <ion-item *ngFor="let c of listaComponentes" [routerLink]="c.redirectTo">
+          <ion-icon color="primary" [name]="c.icon" slot="start"></ion-icon>
+
+          {{c.name}}  
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>ion-searchbar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-searchbar
+    [debounce]="1000"
+    (ionInput)="handleInput($event)"
+  ></ion-searchbar>
+
+  <ion-list>
+     
+    <ion-item *ngFor="let result of results" [routerLink]="result.redirectTo">
+         
+      <ion-icon color="primary" [name]="result.icon" slot="start"></ion-icon>
+      <div>
+        <div>{{result.name}}</div>
+        <div>${{result.precio}} </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!---
+    
+    <ion-list>
+    <ion-item *ngFor="let result of results">
+      <ion-label>{{ result }}</ion-label>
+    </ion-item>
+  </ion-list>
+    ----->
+</ion-content>
